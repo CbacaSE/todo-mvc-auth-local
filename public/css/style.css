@@ -91,11 +91,11 @@ p {
   
   .navbar .menu-items {
     display: flex;
-    overflow:hidden;
   }
   
   .navbar .nav-container li {
     list-style: none;
+    overflow:hidden;
   }
   
   .navbar .nav-container a {
