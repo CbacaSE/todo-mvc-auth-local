@@ -78,7 +78,6 @@ p {
   .navbar {
     background: #222222;
     justify-content: center;
-    overflow:hidden;
     width: 100%;
   }
   
@@ -88,6 +87,7 @@ p {
     display: flex;
     height: 75px;
     justify-content: center;
+    overflow:hidden;
   }
   
   .navbar .menu-items {
