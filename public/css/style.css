@@ -91,6 +91,7 @@ p {
   
   .navbar .menu-items {
     display: flex;
+    overflow:hidden;
   }
   
   .navbar .nav-container li {
