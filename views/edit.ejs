@@ -1,0 +1,130 @@
+<!-- This file is added -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Tasks</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ropa+Sans&display=swap" rel="stylesheet">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- css -->
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <!-- navbar -->
+        <nav>
+            <div class="navbar">
+                <div class="container nav-container">
+                    <input class="checkbox" type="checkbox" />
+                    <div class="hamburger-lines">
+                        <span class="line line1"></span>
+                        <span class="line line2"></span>
+                        <span class="line line3"></span>
+                    </div>
+                    <div class="logo">
+                        <h1>Daily Tasks</h1>
+                    </div>
+                    <div class="menu-items">
+                        <!-- <li><a href="/signup">Register</a></li> -->
+                        <li><a href="/logout">Log Out</a></li>
+                        <li><a href="/login">About</a></li>
+                        <!-- <li><a href="#">100Devs</a></li> -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- <form action="/todos/createTodo" method='POST'>
+        <input class="form-item" type="text" placeholder="New Task" name='todoItem' />
+
+        <div class="dropdown-group form-item">
+            <label class="form-item form-label" for="inputGroupSelect01">Priority</label>
+            <select name="priority" class="form-item form-select" id="inputGroupSelect01">
+                <option selected value="0">Choose...</option>
+                <option value="1">Low</option>
+                <option value="2">Normal</option>
+                <option value="3">Important</option>
+                <option value="4">Critical</option>
+            </select>
+            <button class="btn add-btn form-item" type="submit">+ Add Task</button>
+        </div>
+    </form> -->
+
+    <h2>Editing Task</h2>
+
+    <ul>
+        <% todos.forEach( el=> { %>
+            <% if (el._id==idOfItem) { %>
+                <li class="todo-list-item">
+                    <!-- This form will make a post request to server, sending item id in url -->
+                    <form action="/todos/edit/<%= el._id %>" method="POST">
+                        <% if (el.todo.length>= 50) { %>
+                            <textarea class="form-item" id="editarea" rows="5" cols="45"
+                                name="todoItem"><%= el.todo %></textarea>
+                            <% } else { %>
+                                <input class="form-item" id="editarea" type="text" size="35" value="<%= el.todo %>"
+                                    name="todoItem">
+                                <% } %>
+                                    <div class="form-item dropdown-group">
+                                        <label class="form-item form-label" for="inputGroupSelect01">Priority</label>
+                                        <select name="priority" class="form-item form-select" id="inputGroupSelect01">
+                                            <option selected value="<%= el.priority %>">
+                                                <% if (el.priority==1) { %>
+                                                    Low
+                                                    <% } else if (el.priority==2) { %>
+                                                        Normal
+                                                        <% } else if (el.priority==3) { %>
+                                                            Important
+                                                            <% } else if (el.priority==4) { %>
+                                                                Critical
+                                                                <% } else if (el.priority==0) { %>
+                                                                    Choose...
+                                                                    <% } %>
+                                            </option>
+                                            <option value="1">Low</option>
+                                            <option value="2">Normal</option>
+                                            <option value="3">Important</option>
+                                            <option value="4">Critical</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="confirm-cancel-btn-group form-item">
+                                        <!-- confirm is a submit button for POST -->
+                                        <button class="form-item btn confirm-btn" type="submit"
+                                            class="confirm">Confirm</button>
+
+                                        <!-- cancel gets routed to '/todos' -->
+                                        <button class="form-item btn cancel-btn" href="/todos"
+                                            class="cancel">Cancel</button>
+                                    </div>
+
+                    </form>
+                </li>
+            <% }}) %>
+        
+    </ul>
+
+
+
+
+    <!-- <a href="/logout">Logout</a> -->
+
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
