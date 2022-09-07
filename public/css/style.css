@@ -101,7 +101,6 @@ p {
     color: #84DCC6;
     font-weight: 500;
     font-size: 2.5rem;
-    overflow:hidden;
     padding: 0.7rem;
     text-decoration: none;
   }
@@ -169,7 +168,7 @@ p {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    margin-left: -40px;
+    margin-left: -300px;
     padding-left: 50px;
     padding-top: 120px;
     text-align: center;
