@@ -87,11 +87,11 @@ p {
     display: flex;
     height: 75px;
     justify-content: center;
-    overflow:hidden;
   }
   
   .navbar .menu-items {
     display: flex;
+    overflow:hidden;
   }
   
   .navbar .nav-container li {
