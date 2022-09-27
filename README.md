@@ -1,5 +1,4 @@
 
-<video src='https://youtu.be/nQhO4fHQD9c' width=180></video>
 
 # Introduction
 
